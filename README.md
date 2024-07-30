@@ -55,4 +55,4 @@ no doubt its a niche scenario. I needed it for my games, movies and tv-shows tra
 3. put that folder in your vaults plugin folder. Mine looks like this A:\Projects\Obsidian\Reflections\.obsidian\plugins\table-numbering
 
 #### Bonus
-If you want you tables to have the same looks as I have in the images then simply download the Table.css file and put in you snippet folder. The dashes can be 1 or 2px larger or smaller depending on the table size and the code is quite a mess. So use it if its something you're willing to overlook just to have a clean looking table.
+If you want your tables to have the same looks as I have in the images, then simply download the Table.css file and put it in your snippet folder. The dashes can be 1 or 2px larger or smaller depending on the table size and frankly speaking, the code is quite a mess. So use it if its something you're willing to overlook just to have a clean looking table.
