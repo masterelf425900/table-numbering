@@ -1,0 +1,10 @@
+{
+	"id": "table-numbering",
+	"name": "Table Numbering",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Automatically insert and update numbered rows in tables.",
+	"author": "MasterElf425900",
+	"authorUrl": "https://github.com/masterelf425900/table-numbering",
+	"isDesktopOnly": false
+}
