@@ -38,7 +38,7 @@ A simple obsidian plugin to automatically insert and update numbered rows in tab
 
 <br>
 
-5. Now we can simply change the texts wihtout worrying about the numbers being off.
+5. Now we can simply change the texts without worrying about the numbers being off.
 
 <br>
 
