@@ -1,0 +1,91 @@
+/* Custom Table Style for Obsidian */
+
+/* Define custom properties for spacing */
+:root {
+  --row-gap: 10px; /* Gap size for all rows except the first row */
+  --first-row-gap: -20px; /* Gap size specifically for the space below the first row */
+  --border-color: rgb(87, 92, 117); /* Border color for lines */
+  --side-margin: 10px; /* Margin to be left on both sides */
+  --vertical-margin: 10px; /* Margin to be left on top and bottom */
+  --column-gap: 10px; /* Gap between columns for dash line cut-off */
+}
+
+/* Ensure gaps between cells */
+.markdown-preview-view table {
+  border-collapse: separate;
+  border-spacing: var(--row-gap) var(--column-gap); /* Set the default gap size for rows and columns */
+  width: calc(100% - 2 * var(--side-margin)); /* Adjust width to account for side margins */
+  margin: var(--vertical-margin) auto; /* Center the table horizontally and add vertical margins */
+  max-width: calc(100% - 2 * var(--side-margin)); /* Prevent the table from exceeding container width */
+  box-shadow: 0 0.2rem 0.5rem var(--background-modifier-box-shadow); /* Add shadow similar to multi-column styles */
+}
+
+/* Remove borders from table cells and header cells */
+.markdown-preview-view table th, .markdown-preview-view table td {
+    border: none;
+    background-color: var(--background-primary); /* Matches the note's background color */
+    padding: 0; /* Removes default padding for a cleaner look */
+}
+
+/* Style for table header */
+.markdown-preview-view table th {
+    background-color: var(--background-primary); /* Matches the note's background color */
+    border-bottom: none; /* Remove the bottom border from the header */
+}
+
+/* Add a single, continuous line below each row except the first and last row */
+.markdown-preview-view table tr {
+    position: relative; /* Needed to position the pseudo-element correctly */
+    margin-bottom: var(--row-gap); /* Default margin between rows */
+}
+
+/* Add a single, continuous line below each row except the first and last row */
+.markdown-preview-view table tr:not(:first-of-type)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust this to control the gap between rows and line */
+    width: 100%;
+    height: 2px; /* Height of the line */
+    background-color: var(--border-color); /* Single continuous line with specified color */
+}
+
+/* Adjust the gap below the first row separately */
+.markdown-preview-view table tr:first-of-type::after {
+    content: "";
+    display: block;
+    height: var(--first-row-gap); /* Custom gap below the first row */
+    background-color: transparent; /* Ensures no line is added */
+}
+
+/* Ensure no extra lines below the last row */
+.markdown-preview-view table tr:last-of-type::after {
+    display: none; /* Hide the line for the last row */
+}
+
+/* Add a gap between columns to simulate cut-off effect */
+.markdown-preview-view table td:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: var(--column-gap); /* Gap width */
+    height: 4px; /* Height of the line */
+    background-color: var(--background-primary); /* Match the background color to hide the line */
+}
+
+/* Align table to the left, center, or right similar to multi-column layout alignment */
+.mcm-table-alignment.mcm-content-alignment-left table {
+    margin-right: auto;
+    margin-left: var(--side-margin);
+}
+
+.mcm-table-alignment.mcm-content-alignment-center table {
+    margin-right: auto;
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+}
+
+.mcm-table-alignment.mcm-content-alignment-right table {
+    margin-right: var(--side-margin);
+    margin-left: auto;
+}
